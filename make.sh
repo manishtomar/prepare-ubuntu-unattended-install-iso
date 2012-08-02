@@ -61,7 +61,7 @@ default unattended
 label unattended
   menu label ^Unattended Install of a Minimal Ubuntu Server VM - ERASES HARD DISK -
   kernel /install/vmlinuz
-  append  file=/cdrom/preseed/unattended.seed debian-installer/locale=en_US console-setup/layoutcode=us initrd=/install/initrd.gz quiet --
+  append  file=/cdrom/preseed/unattended.seed debian-installer/locale=en_US console-setup/layoutcode=us keyboard-configuration/layoutcode=us console-setup/ask_detect=false initrd=/install/initrd.gz quiet --
 EOF
 grep -v 'default install' $isolinux_cfg >> $isolinux_cfg.tmp
 mv $isolinux_cfg.tmp $isolinux_cfg
